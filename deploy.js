@@ -6,6 +6,10 @@ var web3 = new Web3(new Web3.providers.HttpProvider('****'));
 let publicKey = '0x372967130b1A7cd386348Bc59de905e628E36F3a';
 let privateKey = '*****';
 
+var swapLib = JSON.parse(fs.readFileSync("path_TO_directory"));
+var swapABI = swapLib.abi;
+var swapByteCode = swapLib.bytecode;
+
 web3.eth.accounts.wallet.add("0x"+privateKey);
 
 var contractDeploy = new web3.eth.Contract(swapABI);
